@@ -19,10 +19,11 @@ jobs:
         java-version: '17'
 
     - name: Build APK with Gradle
-      run: gradle assembleDebug -Dkotlin.compiler.execution.strategy=out-of-process -x validateSigningDebug
+      run: gradle assembleDebug -Dkotlin.compiler.execution.strategy=out-of-process -x validateSigningDebug --info
 
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
         path: app/build/outputs/apk/debug/app-debug.apk
+        
