@@ -19,7 +19,7 @@ jobs:
         java-version: '17'
 
     - name: Build APK with Gradle
-      run: gradle assembleDebug
+      run: gradle assembleDebug -Dkotlin.compiler.execution.strategy=out-of-process
 
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
