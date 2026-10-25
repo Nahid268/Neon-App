@@ -19,7 +19,7 @@ jobs:
         java-version: '17'
 
     - name: Build APK with Gradle
-      run: gradle assembleDebug -Dkotlin.compiler.execution.strategy=out-of-process -x validateSigningDebug --stacktrace
+      run: gradle assembleDebug -Dkotlin.compiler.execution.strategy=in-process -Pandroid.injected.signing.store.file="" --stacktrace
 
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
